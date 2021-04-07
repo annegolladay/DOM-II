@@ -7,8 +7,16 @@ debugger;
 console.log(logo);
 
 //Nav
-const navLink = document.querySelectorAll('nav > a');
-navLink
+const navLinks = document.querySelectorAll('nav > a');
+navLinks.addEventListener('dblclick', function (event) {
+    event.target.style.fontSize = '2.5rem';
+});
+
+// navLinks.forEach(function(link) {
+//     link.addEventListener('mouseover', function (event) {
+//         link.style.color = ('violet');
+//     });
+// });
 
 //Images
 //Intro (Bus in Sand Image)
@@ -24,7 +32,10 @@ const adventureImg = document.querySelector('.content-section.inverse-content im
 const destinationImg = document.querySelector('.content-destination img');
 
 //Welcome to Fun Bus Section
-
+const welcomeText = document.querySelector('.intro h2');
+welcomeText.addEventListener('mouseleave', function (event) {
+    event.target.style.fontSize = '5rem';
+});
 
 
 //Main Section
@@ -55,19 +66,29 @@ contentDestination.addEventListener('mouseover', function (event) {
 const funSun = document.querySelector('.destination:nth-of-type(1)');
 funSun.addEventListener('mouseover', function (event) {
     funSun.style.backgroundColor = ('gray');
+    funSun.style.borderRadius = ('4%');
 });
 
 //Mountain Excursion
 const mountainExcursion = funSun.nextElementSibling;
 mountainExcursion.addEventListener('mouseover', function (event) {
     mountainExcursion.style.backgroundColor = ('teal');
-})
+    mountainExcursion.style.borderRadius = ('4%');
+    setTimeout(function() {
+        mountainExcursion.style.backgroundColor = '';
+        console.log('testing');
+    }, 500);
+}, false);
 
 //Island Getaway
 const islandGetaway = mountainExcursion.nextElementSibling;
 islandGetaway.addEventListener('mouseover', function(event) {
     islandGetaway.style.backgroundColor = ('orange');
-})
+    islandGetaway.style.borderRadius = ('4%');
+    setTimeout(function() {
+        islandGetaway.style.backgroundColor = '';
+    }, 500);
+}, false);
 
 //Sign Up Button
 const signMeUpButton = document.querySelectorAll('.btn');
