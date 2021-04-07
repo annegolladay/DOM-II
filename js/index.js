@@ -32,9 +32,18 @@ const adventureImg = document.querySelector('.content-section.inverse-content im
 const destinationImg = document.querySelector('.content-destination img');
 
 //Welcome to Fun Bus Section
-const welcomeText = document.querySelector('.intro h2');
+const welcomeTitle = doucment.querySelector('intro h2');
+welcomeTitle.addEventListener('click', function (event) {
+    if(welcomeTitle.style.textTransform !== 'uppercase') {
+        welcomeTitle.style.textTransform = 'uppercase'
+    } else {
+        welcomeTitle.style.textTransform = 'lowercase'
+    }
+});
+
+const welcomeText = document.querySelector('.intro p');
 welcomeText.addEventListener('mouseleave', function (event) {
-    event.target.style.fontSize = '5rem';
+    event.target.style.fontSize = '2rem';
 });
 
 
